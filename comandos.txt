@@ -1,0 +1,4 @@
+//Crear Archivo : touch nombre.cpp
+//Crear Carpeta : mkdir nombre
+//Compilar : g++ -o cli.out main.cpp Menu.cpp Token.cpp
+//Ejecutar : ./cli.out suma "(2,5)+(2,5)"
