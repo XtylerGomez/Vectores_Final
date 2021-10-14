@@ -80,6 +80,21 @@ int main(int argc, char* argv[]){
         m.productos(v.vectores(argList[1]), v.getSize(v.vectores(argList[1])),v.checkPunto(argList[0]));
       }
     }
+    if(argList[0]=="-t"||argList[0]=="t"||argList[0]=="traslacion") {  
+    if(argc == 2){ 
+        cout << "Formato de Vectores no Aceptado" << endl;
+      }else{
+        m.traslacion(v.vectores(argList[1]), v.getSize(v.vectores(argList[1])));
+      }
+    }
+    if(argList[0]=="-ro"||argList[0]=="ro"||argList[0]=="rotacion") {  
+    if(argc == 2){ 
+        cout << "Formato de Vectores no Aceptado" << endl;
+      }else{
+        float degree=stof(argList[2]);
+        m.rotacion(v.vectores(argList[1]), v.getSize(v.vectores(argList[1])), m.rad(degree));
+      }
+    }
   }
   return 0;
 }

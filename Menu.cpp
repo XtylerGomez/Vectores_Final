@@ -106,12 +106,35 @@ void Menu::productos(char *tokens, int size, bool flag){
   }
 }
 
+void Menu::traslacion(char *tokens, int size){
+  int opx=0, opy=0;
+  opx=(tokens[1]-48)+(tokens[7]-48);
+  opy=(tokens[3]-48)+(tokens[9]-48);
+  cout<<"Respuesta : ("<<opx<<","<<opy<<")"<<endl;
+}
+
+float Menu::rad(float x){
+  return x*M_PI/180;
+}
+
+void Menu::rotacion(char *tokens, int size, float degree){
+  float opx=0, opy=0;
+  float x=(tokens[1]-48), y=(tokens[3]-48);
+  float seno=sin(degree), cosceno=cos(degree);
+  
+  opx=0+cosceno*(x-0)-seno*(y-0);
+  opy=0+seno*(x-0)+cosceno*(y-0);
+  cout<<"Respuesta : ("<<opx<<","<<opy<<")"<<endl; 
+}
+
 void Menu::ayuda(){
-    cout << "-a | a | ayuda  Muestra el mensaje de Ayuda" << endl;
-    cout << "-n | n | norma  Calcular la normal de un vector. FORMATO '(x,y)' o '(x,y,<)'" << endl;
-    cout << "-s | s | suma  Suma de dos vectores. FORMATO '(x1,y1)+(x2,y2)' o '(x1,y1,z1)+(x2+y2+z2)'. " << endl;
-    cout << "-r | r | resta  Resta de dos vectores. FORMATO '(x1,y1)+(x2,y2)'" << endl;
-    cout << "-m | m | multi Multiplicacion de un escalar por un vector. FORMATO 'escalar(x,y)'" << endl;
-    cout << "-p | p | punto Producto Punto de dos vectores R3. FORMATO '(x1,y1,z1)*(x2+y2+z2)'" << endl;
-    cout << "-c | c | cruz Producto Cruz de dos vectores R3. FORMATO '(x1,y1,z1)*(x2+y2+z2)'" << endl;
+    cout << "-a | a | ayuda >>Muestra el mensaje de Ayuda" << endl;
+    cout << "-n | n | norma >>Calcular la normal de un vector. FORMATO '(x,y)' o '(x,y,<)'" << endl;
+    cout << "-s | s | suma >>Suma de dos vectores. FORMATO '(x1,y1)+(x2,y2)' o '(x1,y1,z1)+(x2+y2+z2)'. " << endl;
+    cout << "-r | r | resta >>Resta de dos vectores. FORMATO '(x1,y1)+(x2,y2)'" << endl;
+    cout << "-m | m | multi >>Multiplicacion de un escalar por un vector. FORMATO 'escalar(x,y)'" << endl;
+    cout << "-p | p | punto >>Producto Punto de dos vectores R3. FORMATO '(x1,y1,z1)*(x2,y2,z2)'" << endl;
+    cout << "-c | c | cruz >>Producto Cruz de dos vectores R3. FORMATO '(x1,y1,z1)*(x2,y2,z2)'" << endl;
+    cout << "-t | t | traslacion >>Traslacion de un Vector R2. FORMATO '(x,y) (x',y')'" << endl;
+    cout << "-ro | ro | rotacion >>Rotacion de un Vector R2 respecto al origen. FORMATO '(x,y)' Angulo" << endl;
 }

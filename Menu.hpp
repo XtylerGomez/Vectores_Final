@@ -11,8 +11,9 @@ class Menu{
     void suma3d(char *tokens, int size);
     void productos(char *tokens, int size, bool flag);
     void multi(char *tokens, int size);
-    
-    void cruz(char *tokens, int size);
+    void traslacion(char *tokens, int size);
+    void rotacion(char *tokens, int size, float degree);
+    float rad(float x);
 };
 
 #endif
